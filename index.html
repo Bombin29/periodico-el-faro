@@ -4,67 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Faro - Inicio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        nav {
-            background-color: #333;
-            text-align: center;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        main {
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: white;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #004080;
-            color: white;
-        }
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <script src="script.js"></script>
+
     <header>
-        <h1>El Faro</h1>
+        <h1>El Faro - Inicio</h1>
         <p>Tu fuente confiable de noticias</p>
+        <div id="fecha-hora"></div>
         <img src="logo.png" alt="Logotipo de El Faro" width="100">
     </header>
+    
 
     <nav>
         <a href="index.html">Inicio</a>
@@ -73,45 +25,133 @@
     </nav>
 
     <main>
-        <h2>Últimas Noticias</h2>
+        <div class="noticia-container">
+            <div class="noticia">
+                <section id="agregar-articulo">
+                    <h2>Agregar Nuevo Artículo</h2>
+                    <form id="formulario-articulo" class="formulario-articulo">
+                        <p>Título del artículo</p>
+                        <p><input type="text" id="titulo-articulo" placeholder="Título del artículo" required></p>
+                        <p>Contenido del artículo</p>
+                        <p><textarea id="contenido-articulo" placeholder="Descripción del artículo" required></textarea></p>
+                        <p><button type="submit">Agregar Artículo</button></p>
+                    </form>
+                </section>
+                
+                <section id="articulos-dinamicos">
+                    <h2>Artículos Agregados</h2>
+                    <p id="contador-articulos">Total de artículos: 0</p>
+                    <div id="contenedor-articulos"></div>
+                </section>
+            </div>
+        </div>
         
-        <table>
-            <tr>
-                <th>Título</th>
-                <th>Categoría</th>
-                <th>Texto del artículo</th>
-            </tr>
-            <tr>
-                <td>Avance tecnológico en inteligencia artificial</td>
-                <td>General</td>
-                <td>Los últimos avances en IA están revolucionando el mundo...</td>
-            </tr>
-            <tr>
-                <td>Nuevo descubrimiento en el espacio</td>
-                <td>Ciencia</td>
-                <td>Se ha encontrado un exoplaneta con condiciones similares a la Tierra...</td>
-            </tr>
-            <tr>
-                <td>Cambios climáticos preocupan a la ONU</td>
-                <td>Medioambiente</td>
-                <td>Expertos advierten sobre el impacto del cambio climático...</td>
-            </tr>
-        </table>
 
-        <h3>Video Recomendado</h3>
-	<p>Misterios del Universo</p>
-        <video width="320" height="240" controls>
-            <source src="noticia.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-        </video>
 
-        <h3>Audio de Noticias</h3>
-	<p>¿Quién o qué creó el universo? Stephen Hawking responde</p>
-        <audio controls>
-            <source src="audio_noticia.mp3" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-    </main>
+        <h2>Últimas Noticias</h2>
+        <div class="noticia-container">
+            <div class="noticia">
+                <h3>Avance tecnológico en inteligencia artificial</h3>
+                <p>La inteligencia artificial (IA) ha dado un paso gigantesco en su evolución gracias a recientes desarrollos anunciados por un equipo internacional de investigadores. 
+                Durante una conferencia celebrada esta semana en Ginebra, se presentó un nuevo modelo de IA capaz de aprender y adaptarse en tiempo real a entornos cambiantes sin necesidad 
+                de programación adicional.</p>
+                <p>Este avance marca un hito en la historia de la tecnología, ya que permite a las máquinas no solo ejecutar tareas predefinidas, sino también tomar decisiones complejas de 
+                manera autónoma. Según el Dr. Elena Ruiz, líder del proyecto, "este sistema puede identificar patrones, anticipar problemas y actuar de forma proactiva, acercándonos cada vez 
+                más a una verdadera inteligencia artificial general".</p>
+                <p>La aplicación de esta tecnología podría revolucionar múltiples industrias, desde la medicina, con diagnósticos más rápidos y precisos, hasta la industria automotriz, con 
+                vehículos autónomos que se adaptan a condiciones imprevisibles del tráfico.
+                <p>Además, los investigadores destacaron su compromiso con la ética y la seguridad en el desarrollo de IA, asegurando que estos nuevos sistemas incluyen estrictos protocolos 
+                para la toma de decisiones responsables.</p>
+                <p>Empresas tecnológicas de todo el mundo ya han mostrado interés en integrar esta innovación en sus productos y servicios. Se espera que los primeros prototipos comerciales 
+                comiencen a implementarse a partir de finales de este año, marcando una nueva era en la relación entre humanos y máquinas.</p>
+                <img src="ia.jpeg" alt="Inteligencia Artificial">
+            </div>
+            <div class="noticia">
+                <h3>Nuevo descubrimiento en el espacio</h3>
+                <p>Astrónomos de la NASA y la Agencia Espacial Europea (ESA) han anunciado el descubrimiento de un nuevo exoplaneta que podría reunir condiciones similares a las de la Tierra. 
+                Bautizado como Eden-9, el planeta se encuentra a 120 años luz de distancia, en la constelación de Cygnus, y orbita dentro de la zona habitable de su estrella.</p>
+                <p>El hallazgo fue posible gracias al telescopio espacial Aurora, lanzado en 2023, que ha permitido observar detalles nunca antes alcanzados en sistemas planetarios lejanos. 
+                Según los científicos, Eden-9 presenta una atmósfera densa, presencia de agua en estado líquido y temperaturas compatibles con el desarrollo de formas de vida.</p>
+                <p>"La composición atmosférica de Eden-9 es asombrosamente similar a la de nuestro propio planeta. Estamos ante uno de los descubrimientos más emocionantes de la última década", 
+                afirmó la Dra. Mariana Vélez, astrobióloga de la ESA.</p>
+                <p>El próximo paso será enviar misiones robóticas de observación más avanzadas para estudiar el planeta en detalle. Aunque los viajes tripulados aún están lejos de ser una 
+                realidad, el descubrimiento abre nuevas perspectivas para la búsqueda de vida extraterrestre y el futuro de la exploración espacial.</p>
+                <p>La comunidad científica celebra este avance como un recordatorio de cuánto queda aún por descubrir más allá de nuestro propio sistema solar.</p>
+                <img src="espacio.jpeg" alt="Descubrimiento Espacial">
+            </div>
+            <div class="noticia">
+                <h3>Cambios climáticos preocupan a la ONU</h3>
+                <p>La Organización de las Naciones Unidas (ONU) ha expresado su creciente preocupación ante la aceleración de la crisis climática global. Informes recientes indican que el año 
+                2024 fue el más cálido registrado hasta la fecha, con temperaturas medias globales superando por primera vez el umbral de 1,5 °C respecto a niveles preindustriales.</p>
+                <p>Durante la Conferencia de las Naciones Unidas sobre el Cambio Climático de 2024 (COP29), celebrada en Bakú, Azerbaiyán, el secretario general de la ONU, António Guterres, 
+                instó a las grandes potencias a reducir sus emisiones de combustibles fósiles en un 43 % para 2030, con el objetivo de limitar el calentamiento global a 1,5 °C . Sin embargo, 
+                la ausencia de líderes clave como los de Estados Unidos y China dificultó la consecución de acuerdos vinculantes.</p>
+                <p>El informe de la Organización Meteorológica Mundial (OMM) advierte que la última década ha sido la más cálida jamás registrada, y que el cambio climático se está acelerando 
+                peligrosamente . Además, el Programa de las Naciones Unidas para el Medio Ambiente (PNUMA) señala que los actuales compromisos nacionales de reducción de emisiones son 
+                insuficientes, y que se requieren reducciones del 42 % para 2030 y del 57 % para 2035 para alcanzar el objetivo de limitar el calentamiento global a 1,5 °C .</p>  
+                <p>En respuesta a esta situación, la ONU ha hecho un llamado urgente a los países para que actualicen sus planes climáticos nacionales antes de la próxima ronda de 
+                Contribuciones Determinadas a Nivel Nacional (NDC), prevista para principios de 2025, y para que aumenten significativamente la financiación destinada a la adaptación y 
+                mitigación del cambio climático, especialmente en las naciones más vulnerables.</p>
+                <img src="cambio_climatico.jpeg" alt="Cambio Climático">
+            </div>
+        </div>
+
+    <h2>Video Recomendado</h2>
+    <div class="noticia-container">
+        <div class="noticia">
+            <h3>Misterios del Universo</h3>
+            <p>A pesar de los grandes avances en la astronomía y la física, el Universo sigue siendo un lugar lleno de enigmas que desafían nuestra comprensión. Desde los orígenes del tiempo hasta 
+            la naturaleza de la materia oscura, los científicos continúan explorando los misterios más profundos del cosmos.</p>
+            <p>Uno de los mayores interrogantes es el destino final del Universo. ¿Se expandirá para siempre o colapsará sobre sí mismo? Aunque observaciones recientes sugieren que la expansión se 
+            está acelerando, impulsada por una fuerza desconocida llamada energía oscura, su verdadera naturaleza sigue siendo uno de los grandes secretos de la ciencia moderna.</p>
+            <p>Otro enigma fascinante es la existencia de agujeros negros supermasivos en el centro de casi todas las galaxias. ¿Cómo se formaron tan rápidamente en la historia del cosmos? 
+            ¿Qué ocurre realmente dentro de ellos? Hasta ahora, sólo hemos podido estudiar sus efectos indirectos sobre el espacio que los rodea.</p>
+            <p>Además, los astrónomos han detectado señales extrañas, conocidas como "ráfagas rápidas de radio", provenientes de galaxias lejanas. Estas emisiones de energía, breves pero intensas, 
+            todavía no tienen una explicación clara, alimentando teorías que van desde fenómenos naturales extremos hasta posibles mensajes de civilizaciones avanzadas.</p>
+            <p>Cada nuevo descubrimiento, en lugar de cerrar preguntas, parece abrir otras aún más grandes. Mientras tanto, la humanidad sigue mirando al cielo nocturno, sabiendo que aún queda 
+            mucho por descubrir en el vasto y misterioso Universo.</p>
+            <video width="320" height="240" controls>
+                <source src="noticia.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </div>
+	    
+
+    <h2>Audio de Noticias</h2>
+    <div class="noticia-container">
+        <div class="noticia">
+            <h3>¿Quién o qué creó el universo? Stephen Hawking responde</h3>
+            <p>La pregunta sobre el origen del universo ha intrigado a la humanidad durante milenios. ¿Fue creado por un ser supremo? ¿Surgió de la nada? Uno de los científicos más destacados 
+            del siglo XXI, Stephen Hawking, dedicó buena parte de su vida a explorar esta cuestión desde una perspectiva científica.</p>
+            <p>En su obra El gran diseño (2010), Hawking sostuvo que no es necesario invocar a un Dios para explicar la existencia del universo. Según su propuesta, las leyes de la física, y 
+            en particular la gravedad, permiten que el universo se haya creado espontáneamente a partir de la nada.</p>
+            <p>“La creación espontánea es la razón por la que existe algo en lugar de nada, por la que existe el universo, por la que existimos nosotros”, escribió Hawking.</p>
+            <p>Apoyándose en teorías como la del Big Bang y la Gravedad Cuántica, Hawking explicó que en el nivel más fundamental, el universo puede surgir por sí mismo debido a fluctuaciones 
+            cuánticas. Según él, el tiempo mismo tuvo un principio en el Big Bang, por lo que preguntar “¿qué había antes?” carecería de sentido, de la misma forma que no hay nada al norte 
+            del Polo Norte.</p>                
+            <p>Aunque estas ideas no pretenden negar la fe religiosa, Hawking buscó ofrecer una explicación basada exclusivamente en las leyes naturales. Su pensamiento sigue inspirando 
+            debates entre científicos, filósofos y creyentes sobre el origen último de todo lo que existe.</p>
+            <p>Hoy, las teorías de Stephen Hawking siguen siendo pilares fundamentales para quienes buscan entender el mayor de los misterios: ¿por qué existe el universo?</p>
+            <audio controls>
+                <source src="audio_noticia.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+    </div>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form id="formulario-contacto" class="formulario-articulo">
+            <p></p>
+            <input type="text" id="nombre-contacto" placeholder="Tu Nombre" required>
+            <p></p>
+            <textarea id="mensaje-contacto" placeholder="Tu Mensaje" required></textarea>
+            <p></p>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="mensaje-enviado" style="display: none; color: green; font-weight: bold;">¡Mensaje enviado correctamente!</p>
+    </section>
 
     <footer>
         <p>&copy; 2025 El Faro</p>

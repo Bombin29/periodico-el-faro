@@ -4,65 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Faro - Negocios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        nav {
-            background-color: #333;
-            text-align: center;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        main {
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: white;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #004080;
-            color: white;
-        }
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <script src="script.js"></script> <!-- Enlace al archivo JavaScript -->
 
     <header>
         <h1>El Faro - Negocios</h1>
         <p>Las últimas noticias del mundo empresarial</p>
+        <div id="fecha-hora"></div> <!-- Aquí se mostrará la fecha y hora -->
         <img src="logo.png" alt="Logotipo de El Faro" width="100">
     </header>
 
@@ -73,35 +24,93 @@
     </nav>
 
     <main>
+
+        <div class="noticia-container">
+            <div class="noticia">
+                <section id="agregar-articulo">
+                    <h2>Agregar Nuevo Artículo</h2>
+                    <form id="formulario-articulo" class="formulario-articulo">
+                        <p>Título del artículo</p>
+                        <p><input type="text" id="titulo-articulo" placeholder="Título del artículo" required></p>
+                        <p>Contenido del artículo</p>
+                        <p><textarea id="contenido-articulo" placeholder="Descripción del artículo" required></textarea></p>
+                        <p><button type="submit">Agregar Artículo</button></p>
+                    </form>
+                </section>
+                
+                <section id="articulos-dinamicos">
+                    <h2>Artículos Agregados</h2>
+                    <p id="contador-articulos">Total de artículos: 0</p>
+                    <div id="contenedor-articulos"></div>
+                </section>
+            </div>
+        </div>
+
+
         <h2>Noticias de Negocios</h2>
         
-        <table>
-            <tr>
-                <th>Título</th>
-                <th>Categoría</th>
-                <th>Texto del artículo</th>
-            </tr>
-            <tr>
-                <td>Startup chilena revoluciona la energía solar</td>
-                <td>Emprendimiento</td>
-                <td>Una empresa emergente desarrolla paneles más eficientes</td>
-            </tr>
-            <tr>
-                <td>La Bolsa de Santiago cierra al alza</td>
-                <td>Finanzas</td>
-                <td>El mercado chileno muestra un crecimiento sostenido en el último trimestre</td>
-            </tr>
-            <tr>
-                <td>Nueva ley favorece a PYMES</td>
-                <td>Economía</td>
-                <td>El gobierno ha implementado medidas para fortalecer a las pequeñas y medianas empresas</td>
-            </tr>
-        </table>
+        <div class="noticia-container">
+            <div class="noticia">
+                <h3>Startup chilena revoluciona la energía solar</h3>
+                <p><strong>Categoría:</strong> Emprendimiento</p>
+                <p>La startup chilena Edify ha lanzado un innovador modelo que permite a hogares y empresas acceder a energía solar sin necesidad de inversión inicial. Su propuesta consiste en 
+                instalar paneles solares sin costo para el cliente, quien comienza a ahorrar en su factura eléctrica desde el primer mes.</p>
+                <p>Este enfoque elimina una de las principales barreras para la adopción de energías renovables: el alto costo inicial. Al ofrecer una solución accesible y sostenible, Edify busca 
+                democratizar el acceso a la energía limpia en Chile.</p>
+                <p>Además, otras startups chilenas están innovando en el sector energético. Cleanlight desarrolla torres solares portátiles que integran iluminación, comunicaciones y vigilancia, 
+                utilizando inteligencia artificial para optimizar su funcionamiento.</p>   
+                <p>Estas iniciativas reflejan el dinamismo del ecosistema emprendedor chileno en el ámbito de las energías renovables, posicionando al país como un referente en innovación 
+                sostenible.</p>
+                <img src="solar.jpeg" alt="Noticia de Negocios 1">
+            </div>
+            <div class="noticia">
+                <h3>La Bolsa de Santiago cierra al alza</h3>
+                <p><strong>Categoría:</strong> Finanzas</p>
+                <p>La Bolsa de Comercio de Santiago cerró este jueves con una destacada alza, marcando su tercera jornada consecutiva de ganancias. El principal índice bursátil del país, el 
+                S&P IPSA, registró un incremento del 0,96%, alcanzando los 7.998,60 puntos, su nivel más alto en la historia.</p>
+                <p>Durante la sesión, el IPSA superó por primera vez la barrera de los 8.000 puntos, llegando a un máximo intradía de 8.028,95 unidades.</p>    
+                <p>El repunte fue impulsado por el optimismo en los mercados internacionales ante la posibilidad de una reducción de aranceles por parte de Estados Unidos hacia China, 
+                lo que generó un ambiente favorable para las inversiones en mercados emergentes como el chileno.</p>
+                <p>Entre las acciones que lideraron las ganancias se encuentran Vapores (4,4%), BCI (3,23%) e Itaú (2,56%).</p>
+                <p>Con este resultado, el IPSA acumula su récord número 28 en lo que va del año, consolidando una tendencia alcista que refleja la confianza de los inversionistas en la 
+                economía chilena y en el desempeño de sus principales empresas.</p>
+                <img src="bolsa.jpeg" alt="Noticia de Negocios 2">
+            </div>
+            <div class="noticia">
+                <h3>Nueva ley favorece a PYMES</h3>
+                <p><strong>Categoría:</strong> Economía</p>
+                <p>El Gobierno de Chile ha promulgado recientemente una serie de medidas legales orientadas a fortalecer a las micro, pequeñas y medianas empresas (PYMES), en el marco del Pacto 
+                Fiscal. Estas iniciativas buscan aliviar la carga tributaria, facilitar la formalización de nuevos emprendimientos y fomentar el crecimiento económico del sector.​</p>
+                <p><strong>Principales beneficios para las PYMES</strong></p>
+                <p>1. Convenios de pago flexibles: Las empresas acogidas al Régimen Pyme podrán acceder a convenios de pago con la Tesorería General de la República (TGR) por hasta 18 meses, 
+                sin intereses ni multas, y con un pie máximo del 5% de la deuda. ​</p>
+                <p>2. Régimen tributario simplificado para nuevos emprendimientos: Se ha implementado un régimen inicial transitorio que permite a los nuevos emprendimientos tributar con un 
+                impuesto sustitutivo de renta e IVA de 1 UTM mensual durante los primeros dos años de actividad. Este régimen está disponible para empresas cuyos ingresos no superen las 1.800 
+                UF en el primer año y 2.400 UF en el segundo. ​</p>
+                <p>3. Monotributo social: Se ha creado un régimen especial permanente para pequeños emprendimientos pertenecientes al 80% del Registro Social de Hogares, cuyos ingresos anuales 
+                    no superen las 310 UF. Este régimen busca facilitar la formalización y el cumplimiento tributario de estos negocios. ​</p>
+                <p>4. Extensión de beneficios tributarios: La Ley N°21.578 mantiene la tasa reducida del impuesto de primera categoría para las PYMES en un 10% durante el año 2023 y establece 
+                    una tasa del 12,5% para el año comercial 2024, postergando el retorno a la tasa regular del 25% hasta el año comercial 2025. ​</p>
+                <p>5. Subsidio al sueldo mínimo: Se ha implementado un subsidio mensual para micro, pequeñas y medianas empresas, cooperativas y personas jurídicas sin fines de lucro, destinado 
+                    a apoyar el pago del sueldo mínimo a sus trabajadores. ​</p>
+                <p>Estas medidas reflejan el compromiso del Gobierno con el fortalecimiento del sector PYME, reconociendo su importancia en la economía nacional y su potencial para generar 
+                    empleo y desarrollo sostenible.</p>
+                <img src="ley.jpeg" alt="Noticia de Negocios 3">
+            </div>
+        </div>
 
-	<h3>Imagenes de Noticias</h3>
-	<img src="solar.jpeg" alt="Noticia de Negocios 1" width="500">
-	<img src="bolsa.jpg" alt="Noticia de Negocios 2" width="500">
-	<img src="pymes.jpg" alt="Noticia de Negocios 3" width="500">
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="formulario-contacto" class="formulario-articulo">
+                <p></p>
+                <input type="text" id="nombre-contacto" placeholder="Tu Nombre" required>
+                <p></p>
+                <textarea id="mensaje-contacto" placeholder="Tu Mensaje" required></textarea>
+                <p></p>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="mensaje-enviado" style="display: none; color: green; font-weight: bold;">¡Mensaje enviado correctamente!</p>
+        </section>
 
     </main>
 
