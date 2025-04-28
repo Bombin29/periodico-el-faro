@@ -4,109 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Faro - Deportes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        nav {
-            background-color: #333;
-            text-align: center;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        main {
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: white;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #004080;
-            color: white;
-        }
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 <body>
+
+    <script src="script.js"></script> <!-- Enlace al archivo JavaScript -->
 
     <header>
         <h1>El Faro - Deportes</h1>
         <p>Las últimas noticias del mundo deportivo</p>
+        <div id="fecha-hora"></div> <!-- Aquí se mostrará la fecha y hora -->
         <img src="logo.png" alt="Logotipo de El Faro" width="100">
     </header>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="deporte.html">Deporte</a>
-        <a href="negocios.html">Negocios</a>
+    <!-- Sección superior de avisos -->
+    <section class="notification is-primary has-text-centered">
+        <p><strong>🔔 Últimas noticias y avisos importantes aquí</strong></p>
+    </section>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <strong>El Faro</strong>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="deporte.html">Deportes</a>
+                <a class="navbar-item" href="negocios.html">Negocios</a>
+            </div>
+        </div>
     </nav>
 
     <main>
-        <h2>Noticias de Deportes</h2>
+
+        <div class="noticia-container">
+            <div class="noticia">
+                <h1><strong>Agregar Nuevo Artículo</strong></h1>
+                <section id="agregar-articulo">
+                    <form id="formulario-articulo" class="formulario-articulo">
+                        <p>Título del artículo</p>
+                        <p><input type="text" id="titulo-articulo" placeholder="Título del artículo" required></p>
+                        <p>Contenido del artículo</p>
+                        <p><textarea id="contenido-articulo" placeholder="Descripción del artículo" required></textarea></p>
+                        <p><button type="submit">Agregar Artículo</button></p>
+                    </form>
+                </section>
+                
+                <section id="articulos-dinamicos">
+                    <h2><strong>Artículos Agregados</strong></h2>
+                    <p id="contador-articulos">Total de artículos: 0</p>
+                    <div id="contenedor-articulos"></div>
+                </section>
+            </div>
+        </div>
+
+        <h2><strong>Últimas Noticias</strong></h2>
         
+        <!-- Sección principal con artículos -->
+        <main class="section">
+            <div class="container">
 
-        <table>
-            <tr>
-                <th>Título</th>
-                <th>Categoría</th>
-                <th>Texto del artículo</th>
-            </tr>
-            <tr>
-                <td>El Real Madrid gana la Champions</td>
-                <td>Fútbol</td>
-                <td>El equipo español consigue su 15ª Champions League</td>
-            </tr>
-            <tr>
-                <td>Juegos Olímpicos 2024: Lo que debes saber</td>
-                <td>Olimpiadas</td>
-                <td>Se revelan detalles clave sobre las próximas competencias</td>
-            </tr>
-            <tr>
-                <td>Nueva marca mundial en atletismo</td>
-                <td>Atletismo</td>
-                <td>Un atleta rompe el récord mundial en los 100 metros planos</td>
-            </tr>
-        </table>
+                <!-- Artículo destacado -->
+                <div class="columns">
+                    <div class="column is-two-thirds">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="maraton.jpeg" alt="Maratón de Boston 2025">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-4">La Maratón de Boston 2025: Una Fiesta de Resistencia y Pasión</p>
+                                <p>Miles de corredores de todo el mundo se reunieron este abril para participar en la icónica Maratón de Boston. Considerada una de las pruebas de resistencia 
+                                más exigentes y prestigiosas, la edición 2025 fue un despliegue de energía, emoción y espíritu deportivo. El atleta keniano Eliud Kipchoge, a sus 40 años, 
+                                sorprendió al mundo al finalizar con un tiempo récord para su edad. Mientras tanto, miles de corredores aficionados demostraron que el verdadero triunfo está 
+                                en el esfuerzo y la dedicación que requiere completar los 42,195 kilómetros de recorrido.</p>
+                            </div>
+                        </div>
+                    </div>
 
-	<h3>Imagenes de Noticias</h3>
-	<img src="real.jpg" alt="Noticia de Deporte 1" width="500">
-	<img src="juegosolimpicos.avif" alt="Noticia de Deporte 2" width="500">
-	<img src="atleta.jpg" alt="Noticia de Deporte 3" width="500">
+                    <!-- Noticias más pequeñas -->
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-5">Final de la Champions League: Una Batalla de Titanes</p>
+                                <p>La final de la UEFA Champions League 2025 será recordada como una de las más intensas de la historia. El Real Madrid y el Manchester City se enfrentaron en 
+                                un duelo que mantuvo a millones de fanáticos al borde de sus asientos. Tras un empate 2-2 en el tiempo reglamentario, todo se decidió en la tanda de penales, 
+                                donde la sangre fría de los jugadores blancos se impuso para coronarlos campeones. Este título marca la 15.ª copa europea para el club madrileño, consolidando 
+                                aún más su leyenda en el fútbol mundial.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mt-3">
+                            <div class="card-content">
+                                <p class="title is-5">Juegos Olímpicos de Invierno 2026: El Regreso de la Magia Blanca</p>
+                                <p>Con temperaturas bajo cero y escenarios naturales impresionantes, los Juegos Olímpicos de Invierno 2026 en Milán y Cortina d'Ampezzo prometen emociones 
+                                    inolvidables. Atletas de todo el planeta ya se preparan para competir en disciplinas como el esquí alpino, el patinaje artístico y el hockey sobre hielo. 
+                                    Especial atención merece la joven patinadora japonesa Aiko Tanaka, de solo 17 años, quien llega como favorita para llevarse el oro. Los Juegos no solo 
+                                    celebran el espíritu deportivo, sino también la unión entre culturas bajo el manto de la nieve.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <h2><strong>Noticias Anteriores</strong></h2>
+        
+        <div class="noticia-container">
+            <div class="noticia">
+                <h3><strong>El Real Madrid gana la Champions</strong></h3>
+                <p><strong>Categoría:</strong> Fútbol</p>
+                <p>El Real Madrid reafirmó su dominio en Europa al coronarse campeón de la UEFA Champions League 2023/24, tras imponerse 2-0 al Borussia Dortmund en la final disputada en el 
+                estadio de Wembley. Con este triunfo, el club blanco alcanza su decimoquinto título en la máxima competición continental, ampliando su récord como el equipo más laureado de la 
+                historia del torneo .​</p>
+                <p>El marcador se abrió en el segundo tiempo con un gol de Dani Carvajal, quien aprovechó un tiro de esquina para adelantar al Madrid. Minutos después, Vinícius Jr. sentenció 
+                    el encuentro con una definición precisa tras una asistencia de Jude Bellingham, asegurando la victoria para los dirigidos por Carlo Ancelotti .​</p>
+                <p>La UEFA nombró a Dani Carvajal como el Jugador del Partido, destacando su desempeño tanto en defensa como en ataque, incluyendo el gol que abrió el camino al título .​</p>
+                <p>Más de 86.000 aficionados presenciaron la final en el icónico estadio londinense, que se tiñó de blanco con la presencia masiva de seguidores madridistas. La victoria fue 
+                    celebrada con entusiasmo tanto en el estadio como en las calles de Madrid y otras ciudades del mundo .​</p>
+                <p>Con este título, jugadores como Toni Kroos, Luka Modric, Dani Carvajal y Nacho Fernández suman su sexta Champions League, igualando el récord de Francisco Gento como los 
+                futbolistas con más Copas de Europa en la historia.</p>
+                <p>El Real Madrid continúa escribiendo su leyenda en el fútbol europeo, demostrando una vez más por qué es considerado el "Rey de Europa".</p>
+                <img src="real.jpeg" alt="Real Madrid">
+            </div>
+            <div class="noticia">
+                <h3><strong>Juegos Olímpicos 2024: Lo que debes saber</strong></h3>
+                <p><strong>Categoría:</strong> Olimpiadas</p>
+                <p>Los Juegos Olímpicos de París 2024 se celebraron del 26 de julio al 11 de agosto, marcando el regreso de la máxima cita deportiva mundial a la capital francesa después de un 
+                siglo. Con una participación de más de 10.000 atletas de 206 países, incluidos los equipos olímpicos de refugiados y atletas rusos compitiendo bajo bandera neutral, los Juegos 
+                ofrecieron 329 eventos en 32 deportes, incluyendo disciplinas como el breakdance, el surf y la escalada deportiva.</p>
+                <p><strong>Ceremonia de apertura única</strong></p>
+                <p>La inauguración fue histórica: por primera vez, se celebró fuera de un estadio. El río Sena se convirtió en la pasarela flotante para las delegaciones, que desfilaron en 
+                barcos desde el Pont d'Austerlitz hasta el Trocadéro, frente a la Torre Eiffel. A pesar de la lluvia, el evento fue un espectáculo de luz y música, con Céline Dion encargada 
+                de encender el pebetero olímpico.​</p>
+                <p><strong>Los logros más sobresalientes</strong></p>
+                <p>Novak Djokovic logró el Golden Slam al ganar su primer oro olímpico en tenis.​</p>
+                <p>Armand Duplantis batió su propio récord mundial en salto con pértiga con un salto de 6,25 metros.​</p>
+                <p>Katie Ledecky igualó el récord de medallas de oro olímpicas, alcanzando las 9.​</p>
+                <p>Diana Taurasi (EE. UU.) se convirtió en la primera basquetbolista en ganar oro en seis Juegos Olímpicos consecutivos .​​</p>
+                <p><strong>Legado y sostenibilidad</strong></p>
+                <p>París 2024 dejó un legado más allá de las medallas: la ciudad implementó proyectos sostenibles y de calidad de vida urbana, como la recuperación del Sena y la transformación 
+                de Los Campos Elíseos. Además, la organización demostró que es posible integrar el deporte con el patrimonio histórico y cultural de una ciudad .​</p>
+                <img src="juegos_olimpicos.jpeg" alt="Juegos Olímpicos 2024">
+            </div>
+            <div class="noticia">
+                <h3><strong>Nueva marca mundial en atletismo</strong></h3>
+                <p><strong>Categoría:</strong> Atletismo</p>
+                <p>La atleta etíope Tigst Assefa ha marcado un hito en el atletismo al establecer un nuevo récord mundial femenino en la categoría de maratón solo para mujeres. En la edición 
+                de 2025 del Maratón de Londres, Assefa completó la prueba en 2 horas, 15 minutos y 50 segundos, superando el récord anterior de 2:16:16 establecido por la keniana Peres 
+                Jepchirchir.</p>
+                <p>Assefa, medallista de plata en los Juegos Olímpicos de París 2024, atribuyó su éxito a las condiciones climáticas favorables y a una estrategia de carrera bien ejecutada. 
+                Durante la competencia, logró una separación decisiva en los últimos kilómetros, dejando atrás a la keniana Joyciline Jepkosgei, quien finalizó en segundo lugar con un tiempo 
+                de 2:18:44, y a la campeona olímpica Sifan Hassan, quien ocupó el tercer puesto con 2:19:00.</p>
+                <p>Este logro no solo destaca el talento y la dedicación de Assefa, sino que también subraya el creciente dominio de las corredoras etíopes en el ámbito de las maratones 
+                internacionales. Su victoria en Londres es un testimonio de su perseverancia y de la evolución del atletismo femenino a nivel global.</p>
+                <img src="atletismo.jpeg" alt="Atletismo">
+            </div>
+        </div>
+
+        <section id="contacto">
+            <h2><strong>Contacto</strong></h2>
+            <form id="formulario-contacto" class="formulario-articulo">
+                <p></p>
+                <input type="text" id="nombre-contacto" placeholder="Tu Nombre" required>
+                <p></p>
+                <textarea id="mensaje-contacto" placeholder="Tu Mensaje" required></textarea>
+                <p></p>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="mensaje-enviado" style="display: none; color: green; font-weight: bold;">¡Mensaje enviado correctamente!</p>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 El Faro.</p>
+    <!-- Footer ampliado -->
+    <footer class="footer has-background-dark has-text-white">
+        <div class="content has-text-centered">
+            <p>&copy; 2025 El Faro - Tu fuente confiable de noticias.</p>
+        </div>
     </footer>
 
 </body>
